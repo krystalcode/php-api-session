@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Provides session management functionality for API clients including requesting, refreshing and storing access tokens.",
     "keywords": ["API", "session"],
-    "homepage": "https://github.com/krystalcode/php-session-manager",
+    "homepage": "https://github.com/krystalcode/php-api-session-manager",
     "license": "MIT",
     "authors": [
         {
@@ -12,8 +12,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/krystalcode/php-session-manager/issues",
-        "source": "https://github.com/krystalcode/php-session-manager"
+        "issues": "https://github.com/krystalcode/php-api-session-manager/issues",
+        "source": "https://github.com/krystalcode/php-api-session-manager"
     },
     "require": {
         "php": "^8.0",
