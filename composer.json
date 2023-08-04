@@ -1,7 +1,7 @@
 {
-    "name": "krystalcode/session-manager",
+    "name": "krystalcode/api-session-manager",
     "type": "library",
-    "description": "Provides session management functionality including requesting, refreshing and storing access tokens.",
+    "description": "Provides session management functionality for API clients including requesting, refreshing and storing access tokens.",
     "keywords": ["API", "session"],
     "homepage": "https://github.com/krystalcode/php-session-manager",
     "license": "MIT",
@@ -20,6 +20,6 @@
         "league/oauth2-client": "^2.0"
     },
     "autoload": {
-        "psr-4": { "KrystalCode\\SessionManager\\": "src/" }
+        "psr-4": { "KrystalCode\\Api\\SessionManager\\": "src/" }
     }
 }
