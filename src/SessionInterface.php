@@ -32,7 +32,7 @@ namespace KrystalCode\Api\Session;
  * See the session storage for more on deleting/expiring sessions.
  *
  * The type ID and other session values, such access token or cookie, should not
- * be changed after the session is created. If a session expires and a new 
+ * be changed after the session is created. If a session expires and a new
  * session of the same type is needed, a new session object should be created
  * because it is essentially a new session. No setter methods are therefore
  * foreseen by the interface. Implementations should be requiring the values in
@@ -40,7 +40,7 @@ namespace KrystalCode\Api\Session;
  *
  * An exception is when working with access tokens but considering them as one
  * session from the perspective of the application. In that case the access
- * token may be refreshed for the same session instead of creating a new one. 
+ * token may be refreshed for the same session instead of creating a new one.
  * Thus the access token session interface and implementation does provide a
  * setter for the access token.
  *
