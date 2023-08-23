@@ -48,7 +48,7 @@ class PasswordSessionManager implements SessionManagerInterface
      *   The session storage.
      * @param array $options
      *   An assocative array of options. For supported options see
-     *   `\KrystalCode\Acumatica\Api\Session\SessionManagerInterface::connect()`.
+     *   `\KrystalCode\Api\Session\SessionManagerInterface::connect()`.
      *   Additional options added here are:
      *   - grant (array, required): An associative array containing information
      *     that the provider needs to request an access token. Supported array
@@ -127,7 +127,7 @@ class PasswordSessionManager implements SessionManagerInterface
     /**
      * Creates or updates an existing session by requesting a new access token.
      *
-     * @param \KrystalCode\Acumatica\Api\Session\SessionInterface|null $session
+     * @param \KrystalCode\Api\Session\SessionInterface|null $session
      *   The session to update, or `null` to create a new one.
      *
      * @return \KrystalCode\Api\Session\SessionInterface
@@ -212,7 +212,7 @@ class PasswordSessionManager implements SessionManagerInterface
      * @throws \InvalidArgumentException
      *   When a minimum session duration is given but the session start time is
      *   not.
-     * @throws \KrystalCode\Acumatica\Api\Exception\Connection
+     * @throws \KrystalCode\Api\Session\Exception\Connection
      *   When the given duration exceeds the maximum supported by this session
      *   manager.
      */

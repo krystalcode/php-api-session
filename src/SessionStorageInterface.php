@@ -38,7 +38,7 @@ interface SessionStorageInterface
      * If a session with the given type ID already exists, it will be
      * overridden.
      *
-     * @param \Drupal\acumatica\Session $session
+     * @param \KrystalCode\Api\Session\SessionInterface $session
      *   The session to store.
      */
     public function set(SessionInterface $session): void;
@@ -51,7 +51,7 @@ interface SessionStorageInterface
      * @param string $typeId
      *   The session type ID.
      *
-     * @return \Drupal\acumatica\Session\SessionInterface|null
+     * @return \KrystalCode\Api\Session\SessionInterface|null
      *   The session, or `null` if there is no session for the given type ID, or
      *   if there is a session but it has expired.
      */
