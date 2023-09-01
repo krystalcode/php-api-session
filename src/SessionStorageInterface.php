@@ -92,7 +92,7 @@ interface SessionStorageInterface
      *   The session type ID.
      */
     public function delete(
-        string $typeId = self::SESSION_TYPE_ID_DEFAULT
+        string $typeId = SessionInterface::SESSION_TYPE_ID_DEFAULT
     ): void;
 
     /**
