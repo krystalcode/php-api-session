@@ -8,7 +8,9 @@ use League\OAuth2\Client\Token\AccessToken;
 /**
  * The interface for access token sessions.
  */
-interface AccessTokenSessionInterface extends SessionInterface
+interface AccessTokenSessionInterface extends
+    SessionInterface,
+    SessionWithExpirationInterface
 {
     /**
      * Sets the access token.

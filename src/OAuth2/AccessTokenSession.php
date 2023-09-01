@@ -10,7 +10,8 @@ use League\OAuth2\Client\Token\AccessToken;
 /**
  * Default implementation of the access token session.
  */
-class AccessTokenSession extends SessionBase
+class AccessTokenSession extends SessionBase implements
+    AccessTokenSessionInterface
 {
     /**
      * Constructs a new AccessTokenSession object.
@@ -40,5 +41,24 @@ class AccessTokenSession extends SessionBase
     public function getAccessToken(): AccessToken
     {
         return $this->accessToken;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getExpired(): int|null
+    {
+        return $this->accessToken->getExpired();
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \RuntimeException
+     *   When the expiration time is not defined in the access token.
+     */
+    public function hasExpired()
+    {
+        return $this->accessToken->hasExpired();
     }
 }
