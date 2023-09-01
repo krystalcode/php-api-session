@@ -31,15 +31,12 @@ namespace KrystalCode\Api\Session;
  * not necessary to delete sessions.
  *
  * @see \KrystalCode\Api\Session\SessionInterface
+ * @see \KrystalCode\Api\Session\SessionWithExpirationInterface
  */
-interface SupportsExpirationSessionStorageInterface
+interface SessionStorageWithGarbageCollectionInterface
 {
     /**
      * Schedules the session with the given type ID for expiration.
-     *
-     * Expired sessions that may be cleaned up after they have expired should
-     * not be returned when the requesting the session with the default getter
-     * method.
      *
      * This method does not need to return anything nor throw an exception if
      * there is no session with the given type ID.
@@ -53,5 +50,13 @@ interface SupportsExpirationSessionStorageInterface
     public function expire(
         string $typeId = self::SESSION_TYPE_ID_DEFAULT,
         int $interval = 0
-    );
+    ): void;
+
+    /**
+     * Deletes expired sessions of the given type, or all if no type given.
+     *
+     * @param string $typeId
+     *   The session type ID.
+     */
+    public function deleteExpired(string $typeId = NULL): void;
 }

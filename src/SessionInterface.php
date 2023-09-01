@@ -45,7 +45,7 @@ namespace KrystalCode\Api\Session;
  * setter for the access token.
  *
  * @see \KrystalCode\Api\Session\SessionStorageInterface
- * @see \KrystalCode\Api\Session\SupportsExpirationSessionStorageInterface
+ * @see \KrystalCode\Api\Session\SessionStorageWithGarbageCollectionInterface
  * @see \KrystalCode\Api\Session\AccessTokenSessionInterface
  *
  * @I Introduce a session ID for uniquely identifying specific sessions

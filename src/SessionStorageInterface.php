@@ -28,7 +28,7 @@ namespace KrystalCode\Api\Session;
  * related interface.
  *
  * @see \KrystalCode\Api\Session\SessionInterface
- * @see \KrystalCode\Api\Session\SupportsExpirationSessionStorageInterface
+ * @see \KrystalCode\Api\Session\SessionStorageWithGarbageCollectionInterface
  */
 interface SessionStorageInterface
 {
