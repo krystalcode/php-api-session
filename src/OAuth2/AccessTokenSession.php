@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace KrystalCode\Api\Session\OAuth2;
 
+use KrystalCode\Api\Session\SessionBase;
 use League\OAuth2\Client\Token\AccessToken;
 
 /**
