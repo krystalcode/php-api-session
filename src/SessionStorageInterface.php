@@ -46,32 +46,40 @@ interface SessionStorageInterface
     /**
      * Returns the session for the given type ID.
      *
-     * `null` should be returned for expired sessions.
-     *
      * @param string $typeId
      *   The session type ID.
+     * @param bool $ignore_expired
+     *   `true` to treat expired sessions as if they do not exist.
      *
      * @return \KrystalCode\Api\Session\SessionInterface|null
-     *   The session, or `null` if there is no session for the given type ID, or
-     *   if there is a session but it has expired.
+     *   The session, or `null` in the following cases:
+     *   - If the session has expired and `$ignore_expired` is `true`.
+     *   - If there is no session for the given type ID.
      */
     public function get(
-        string $typeId = self::SESSION_TYPE_ID_DEFAULT
+        string $typeId = SessionInterface::SESSION_TYPE_ID_DEFAULT,
+        bool $ignore_expired = true
     ): SessionInterface|null;
 
     /**
      * Returns whether a session with given type ID exists.
      *
-     * `false` should be returned for expired sessions.
-     *
      * @param string $typeId
      *   The session type ID.
+     * @param bool $ignore_expired
+     *   `true` to treat expired sessions as if they do not exist.
      *
      * @return bool
-     *   `true` if the session exists, `false` otherwise.
+     *   `true` in the following cases:
+     *   - The session exists and has not expired.
+     *   - The session exists, has expired, and `$ignore_expired` is `false`.
+     *   `false` in the following cases:
+     *   - The session exists, has expired, and `$ignore_expired` is `true`.
+     *   - There is no session for the given type ID.
      */
     public function exists(
-        string $typeId = self::SESSION_TYPE_ID_DEFAULT
+        string $typeId = SessionInterface::SESSION_TYPE_ID_DEFAULT,
+        bool $ignore_expired = true
     ): bool;
 
     /**
@@ -90,10 +98,12 @@ interface SessionStorageInterface
     /**
      * Returns the number of existing sessions.
      *
-     * Expired sessions should not be counted.
+     * @param bool $ignore_expired
+     *   `true` to treat expired sessions as if they do not exist.
      *
      * @return int
-     *   The number of existing sessions.
+     *   The number of existing sessions, including or excluding expired session
+     *   depending on the value of `$ignore_expired`.
      */
-    public function getCount(): int;
+    public function count(bool $ignore_expired = true): int;
 }
