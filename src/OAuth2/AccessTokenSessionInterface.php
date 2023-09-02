@@ -3,6 +3,7 @@
 namespace KrystalCode\Api\Session\OAuth2;
 
 use KrystalCode\Api\Session\SessionInterface;
+use KrystalCode\Api\Session\SessionWithExpirationInterface;
 use League\OAuth2\Client\Token\AccessToken;
 
 /**
