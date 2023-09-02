@@ -39,7 +39,8 @@ class RefreshTokenSessionManager extends SessionManagerBase
         }
 
         $session = $this->sessionStorage->get(
-            $this->options['type_id'] ?? SessionInterface::SESSION_TYPE_ID_DEFAULT
+            $this->options['type_id'] ?? SessionInterface::SESSION_TYPE_ID_DEFAULT,
+            FALSE
         );
         if ($session === null) {
             throw new \RuntimeException(
